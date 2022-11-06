@@ -42,7 +42,7 @@ async def private_receive_handler(c: Client, m: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=m.chat.id,
-                    text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/JoinOT).",
+                    text="Sorry Sir, You are Banned to use me..",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -64,7 +64,7 @@ async def private_receive_handler(c: Client, m: Message):
         except Exception:
             await c.send_message(
                 chat_id=m.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/JoinOT).",
+                text="Something went Wrong.",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
@@ -78,7 +78,7 @@ async def private_receive_handler(c: Client, m: Message):
                                     log_msg.message_id,
                                     file_name)
 
-        msg_text = "Bruh! 😁\nYour Link Generated! 🤓\n\n📂 **File Name:** `{}`\n**File Size:** `{}`\n\n📥 **Download Link:** `{}`"
+        msg_text = "Boss! 😁\nYour Link Generated! 🤓\n\n📂 **File Name:** `{}`\n**File Size:** `{}`\n\n📥 **Download Link:** `{}`"
         await log_msg.reply_text(text=f"Requested by [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**User ID:** `{m.from_user.id}`\n**Download Link:** {stream_link}", disable_web_page_preview=True, parse_mode="Markdown", quote=True)
         await m.reply_text(
             text=msg_text.format(file_name, file_size, stream_link),
@@ -99,7 +99,7 @@ async def channel_receive_handler(bot, broadcast):
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
         await log_msg.reply_text(
-            text=f"**Channel Name:** `{broadcast.chat.title}`\n**Channel ID:** `{broadcast.chat.id}`\n**Link:** https://t.me/{(await bot.get_me()).username}?start=AbirHasan2005_{str(log_msg.message_id)}",
+            text=f"**Channel Name:** `{broadcast.chat.title}`\n**Channel ID:** `{broadcast.chat.id}`\n**Link:** https://t.me/{(await bot.get_me()).username}?start=iDhruvDj_{str(log_msg.message_id)}",
             quote=True,
             parse_mode="Markdown"
         )
@@ -108,7 +108,7 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Get Direct Download Link", url=f"https://t.me/{(await bot.get_me()).username}?start=AbirHasan2005_{str(log_msg.message_id)}")]
+                    [InlineKeyboardButton("Get Direct Download Link", url=f"https://t.me/{(await bot.get_me()).username}?start=iDhruvDj_{str(log_msg.message_id)}")]
                 ]
             )
         )
